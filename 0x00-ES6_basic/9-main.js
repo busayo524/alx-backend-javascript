@@ -1,6 +1,6 @@
-import getFullBudgetObject from './9-getFullBudget.js';
+import getFullBudget from './9-getFullBudget.js';
 
-const fullBudget = getFullBudgetObject(20, 50, 10);
+const fullBudget = getFullBudget(20, 50); // Pass the initial income and expenses
 
-console.log(fullBudget.getIncomeInDollars(fullBudget.income));
-console.log(fullBudget.getIncomeInEuros(fullBudget.income));
+console.log(fullBudget.getIncomeInDollars()); // Output income in dollars
+console.log(fullBudget.getIncomeInEuros()); // Output income in euros
