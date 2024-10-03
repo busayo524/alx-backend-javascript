@@ -3,8 +3,8 @@ export default function taskBlock(trueOrFalse) {
   let task2 = true;  // Use let for block scoping
 
   if (trueOrFalse) {
-	  const task = true;
-	  const task2 = false;
+	const task = true;
+	const task2 = false;
   }
 return [task, task2]; // Returns outer scope variables
 }
