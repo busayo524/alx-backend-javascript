@@ -1,13 +1,12 @@
 export default function taskBlock(trueOrFalse) {
-  const task = false; // Outer scope variable
-  const task2 = true; // Outer scope variable
+  let task = false;  // Use let for block scoping
+  let task2 = true;  // Use let for block scoping
 
-  // If trueOrFalse is true, define inner variables
   if (trueOrFalse) {
-    const innerTask = true;   // Inner scope variable
-    const innerTask2 = false;  // Inner scope variable
-    return [innerTask, innerTask2]; // Return inner scope variables
+    let task = true;   // This creates a new inner block-scoped variable
+    let task2 = false; // This also creates a new inner block-scoped variable
   }
 
-  return [task, task2]; // Return outer scope variables if trueOrFalse is false
+  return [task, task2]; // Returns outer scope variables
 }
+
