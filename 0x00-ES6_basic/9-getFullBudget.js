@@ -1,17 +1,16 @@
-export default function getFullBudget(income = 0, expenses = 0) {
-  const budget = {
-    income,
-    expenses,
-    getFullBudget() {
-      return this.income - this.expenses;
+import getBudgetObject from './7-getBudgetObject';
+
+export default function getFullBudgetObject(income, gdp, capita) {
+  const budget = getBudgetObject(income, gdp, capita);
+  const fullBudget = {
+    ...budget,
+    getIncomeInDollars(income) {
+      return `$${income}`;
     },
-    getIncomeInDollars() {
-      return this.income;
+    getIncomeInEuros(income) {
+      return `${income} euros`;
     },
-    getIncomeInEuros() {
-      return this.income * 0.85; // Example conversion rate
-    }
   };
 
-  return budget;
+  return fullBudget;
 }
